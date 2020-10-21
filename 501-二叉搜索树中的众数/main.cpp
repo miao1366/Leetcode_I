@@ -11,6 +11,7 @@ struct TreeNode {
     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
 };
 
+// v1 
 class Solution {
 public:
     map<int, int> mapVal;
@@ -43,7 +44,45 @@ public:
         fun(root->left);
         fun(root->right);
     }
-
-
-
 };
+
+// v2 
+class Solution {
+public:
+    map<int, int> mapVal;
+    vector<int> findMode(TreeNode* root) {
+        fun(root);
+    }
+    int base = INT32_MIN;
+    int count = 0;
+    int maxcount = 0;
+    vector<int>vetRet;
+
+    void update(int val) {
+        if (val == base) {
+            count++;
+        } else {
+            base = val;
+            count = 1;
+        }
+        if (count > maxcount) {
+            maxcount = count;
+            vetRet = vector<int> {val};
+        } else if (count == maxcount) {
+            vetRet.push_back(val);
+        }
+        
+    }
+        
+    void fun(TreeNode* root) {
+        if(NULL == root) {
+            return;
+        }
+        fun(root->left);
+        update(root->val);
+        fun(root->right);
+    }
+};
+
+
+
