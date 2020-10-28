@@ -18,9 +18,16 @@ using namespace std;
 class Solution {
 public:
     vector<int> distributeCandies(int candies, int num_people) {
-        vector<int> vetRet;
-        while(true) {
-            
+        vector<int> vetRet(num_people);
+        size_t peoplePos = 0;
+        int  currentCandies = 1;
+        while(candies >=currentCandies) {
+            vetRet[peoplePos%num_people] += currentCandies;
+            peoplePos++;
+            candies -= currentCandies;
+            currentCandies++;
         }
+        vetRet[peoplePos%num_people] += candies;
+        return vetRet;
     }
 };
