@@ -17,6 +17,27 @@ using namespace std;
 class Solution {
 public:
     void gameOfLife(vector<vector<int>>& board) {
-        
+        bool live[9] = {false, false, true, true, false, false, false, false, false}; 
+        bool death[9] = {false, false, false, true, false, false, false, false, false}; 
+        size_t row = board.size();
+        size_t column = board[0].size();
+        vector<vector<int> > vetBoard(row+2, vector<int>(column+2,0));
+        for(size_t i = 0; i < row; i++) {
+            for (size_t j = 0; j < column; j++) {
+                vetBoard[i+1][j+1] = board[i][j];
+            }
+        }
+        for(size_t i = 0; i < row; i++) {
+            for (size_t j = 0; j < column; j++) {
+                int liveNums = getLiveNums(i, j, vetBoard);
+                board[i][j] = (board[i][j] ? live[liveNums]:death[liveNums]) ? 1 : 0;
+                }
+            }
+    }
+    
+    int getLiveNums(int x, int y, const vector<vector<int> > & vet) {
+        ++x;
+        ++y;
+        return vet[x][y-1] + vet[x][y+1] + vet[x-1][y] + vet[x+1][y] + vet[x-1][y-1] + vet[x-1][y+1] + vet[x+1][y-1] + vet[x+1][y+1]; 
     }
 };
