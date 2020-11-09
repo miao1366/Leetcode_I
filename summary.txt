@@ -13,3 +13,27 @@
 4. PageRank算法
 
 5. floyd 判圈算法
+
+6.  位运算
+    https://leetcode-cn.com/problems/single-number-ii/solution/zhi-chu-xian-yi-ci-de-shu-zi-ii-by-leetcode/
+    https://leetcode-cn.com/problems/single-number-ii/solution/zhi-chu-xian-yi-ci-de-shu-zi-ii-shu-zi-dian-lu-she/
+    https://leetcode-cn.com/problems/single-number-ii/solution/zhi-chu-xian-yi-ci-de-shu-zi-ii-by-leetcode/
+    0 与任何数 XOR 结果为该数; 两个相同的数 XOR 结果为 0
+    1. 任何数和 0 做异或运算，结果仍然是原来的数，即 a ^ 0 =a。
+    2. 任何数和其自身做异或运算，结果是 0，即 a ^a = 0。
+    3. 异或运算满足交换律和结合律，即 a ^ b ^ a=b ^ a ^ a=b ^ (a ^ a)=b ^ 0 =b
+
+7.  卡诺图
+
+8. DFS  深度优先搜索  
+   深度优先搜索的步骤分为 1.递归下去 2.回溯上来。顾名思义，深度优先，则是以深度为准则，先一条路走到底，直到达到目标。这里称之为递归下去
+
+9. BFS  广度优先搜索
+   广度优先搜索较之深度优先搜索之不同在于，深度优先搜索旨在不管有多少条岔路，先一条路走到底，不成功就返回上一个路口然后就选择下一条岔路，
+   而广度优先搜索旨在面临一个路口时，把所有的岔路口都记下来，然后选择其中一个进入，然后将它的分路情况记录下来，然后再返回来进入另外一个岔路，并重复这样的操作
+
+10. 回溯
+
+11. 栈
+    什么是栈
+    以前打了粮食，会放到一个筒形的容器里，这个筒形的容器，大家叫它栈。它的特点是先放进去的粮食要最后才能取出来，后放进去的粮食是最先被取出来
