@@ -58,3 +58,5 @@
 18. 缓存算法（FIFO 、LRU、LFU三种算法的区别）
     LRU（The Least Recently Used，最近最久未使用算法）是一种常见的缓存算法，在很多分布式缓存系统（如Redis, Memcached）中都有广泛使用
     LFU（Least Frequently Used ，最近最少使用算法）也是一种常见的缓存算法
+
+19  std::sort  升序排序
